@@ -1,0 +1,32 @@
+/* Companies Page Specific Styles */
+
+.company-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Company form specific styles */
+#companyModal .form-group {
+    margin-bottom: 20px;
+}
+
+#companyModal textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Company table responsive adjustments */
+@media (max-width: 768px) {
+    #companiesTable th:nth-child(5),
+    #companiesTable td:nth-child(5) {
+        display: none; /* Hide Address on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #companiesTable th:nth-child(3),
+    #companiesTable td:nth-child(3) {
+        display: none; /* Hide Email on small mobile */
+    }
+}

@@ -1,0 +1,95 @@
+/* Users Page Specific Styles */
+
+/* Required field indicator */
+.required {
+    color: var(--danger);
+}
+
+/* User Details Modal */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.detail-value {
+    color: var(--text-muted);
+}
+
+/* Status badges for users */
+.status-active {
+    background: rgba(46, 204, 113, 0.1);
+    color: var(--success);
+}
+
+.status-inactive {
+    background: rgba(127, 140, 141, 0.1);
+    color: var(--text-muted);
+}
+
+/* Action buttons in tables */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* User form specific styles */
+#userModal .form-group {
+    margin-bottom: 20px;
+}
+
+#userModal .form-help {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+/* View User Modal Enhancements */
+#viewUserModal .user-details {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#viewUserModal .detail-row:hover {
+    background: var(--border);
+    transition: background 0.3s ease;
+}
+
+/* Responsive adjustments for user page */
+@media (max-width: 768px) {
+    .detail-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    #usersTable th:nth-child(3),
+    #usersTable td:nth-child(3) {
+        display: none; /* Hide Full Name on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #usersTable th:nth-child(4),
+    #usersTable td:nth-child(4) {
+        display: none; /* Hide Email on small mobile */
+    }
+}
