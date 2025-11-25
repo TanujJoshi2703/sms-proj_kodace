@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send SMS - SMS Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>SMS Dashboard</h2>
+            <button class="close-btn" id="closeSidebar">✕</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="send-sms.html" class="nav-item active">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                </svg>
+                <span>Send SMS</span>
+            </a>
+
+            <a href="sms-history.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>SMS History</span>
+            </a>
+
+            <a href="contacts.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Contact Management</span>
+            </a>
+
+            <a href="users.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Users</span>
+            </a>
+
+            <a href="roles.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Roles</span>
+            </a>
+
+            <a href="companies.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Companies</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M12 1v6m0 6v6m7.071-13.071l-4.242 4.242m-5.656 5.656l-4.243 4.243M1 12h6m6 0h6m-3.071-7.071l-4.242 4.242m-5.656 5.656l-4.243 4.243">
+                    </path>
+                </svg>
+                <span>Settings</span>
+            </a>
+
+            <a href="reports.html" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+                <span>Reports</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-item" id="logoutBtn">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-btn" id="menuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="header-title">
+                <h1>Send SMS</h1>
+            </div>
+
+            <div class="header-actions">
+                <div class="user-profile">
+                    <span class="user-name">Admin User</span>
+                    <div class="user-avatar">A</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Send SMS Content -->
+        <div class="content-area">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Send SMS</h2>
+                </div>
+                <div class="card-body">
+                    <form id="sendSmsForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Send To</label>
+                                <select id="sendType" class="form-control">
+                                    <option value="individual">Individual Contact</option>
+                                    <option value="bulk">Bulk Send</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="individualSection">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phoneNumber" class="form-control" placeholder="+91 9876543210">
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="bulkSection" style="display: none;">
+                            <div class="form-group">
+                                <label>Select Contacts</label>
+                                <select id="bulkContacts" class="form-control" multiple>
+                                    <option value="all">All Contacts</option>
+                                </select>
+                                <span class="form-help">Hold Ctrl/Cmd to select multiple</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label>Message</label>
+                                <textarea id="smsMessage" class="form-control" rows="5"
+                                    placeholder="Type your message here..." maxlength="160"></textarea>
+                                <span class="char-count"><span id="charCount">0</span>/160 characters</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary">Clear</button>
+                            <button type="submit" class="btn-primary">Send SMS</button>
+                        </div>
+                        <!DOCTYPE html>
+                        <html lang="en">
+
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Send SMS - SMS Dashboard</title>
+                            <link rel="stylesheet" href="css/dashboard.css">
+                        </head>
+
+                        <body>
+                            <!-- Sidebar Navigation -->
+                            <div class="sidebar" id="sidebar">
+                                <div class="sidebar-header">
+                                    <h2>SMS Dashboard</h2>
+                                    <button class="close-btn" id="closeSidebar">✕</button>
+                                </div>
+
+                                <nav class="sidebar-nav">
+                                    <a href="dashboard.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <rect x="3" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="14" width="7" height="7"></rect>
+                                            <rect x="3" y="14" width="7" height="7"></rect>
+                                        </svg>
+                                        <span>Dashboard</span>
+                                    </a>
+
+                                    <a href="send-sms.html" class="nav-item active">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M22 2L11 13"></path>
+                                            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                                        </svg>
+                                        <span>Send SMS</span>
+                                    </a>
+
+                                    <a href="sms-history.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                            </path>
+                                        </svg>
+                                        <span>SMS History</span>
+                                    </a>
+
+                                    <a href="contacts.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                        <span>Contact Management</span>
+                                    </a>
+
+                                    <a href="users.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span>Users</span>
+                                    </a>
+
+                                    <a href="roles.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg>
+                                        <span>Roles</span>
+                                    </a>
+
+                                    <a href="companies.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        <span>Companies</span>
+                                    </a>
+
+                                    <a href="profile.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span>Profile</span>
+                                    </a>
+
+                                    <a href="settings.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                            <path
+                                                d="M12 1v6m0 6v6m7.071-13.071l-4.242 4.242m-5.656 5.656l-4.243 4.243M1 12h6m6 0h6m-3.071-7.071l-4.242 4.242m-5.656 5.656l-4.243 4.243">
+                                            </path>
+                                        </svg>
+                                        <span>Settings</span>
+                                    </a>
+
+                                    <a href="reports.html" class="nav-item">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                                        </svg>
+                                        <span>Reports</span>
+                                    </a>
+                                </nav>
+
+                                <div class="sidebar-footer">
+                                    <a href="login.html" class="nav-item" id="logoutBtn">
+                                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span>Logout</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Main Content -->
+                            <div class="main-content">
+                                <!-- Header -->
+                                <header class="header">
+                                    <button class="menu-btn" id="menuBtn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                                        </svg>
+                                    </button>
+
+                                    <div class="header-title">
+                                        <h1>Send SMS</h1>
+                                    </div>
+
+                                    <div class="header-actions">
+                                        <div class="user-profile">
+                                            <span class="user-name">Admin User</span>
+                                            <div class="user-avatar">A</div>
+                                        </div>
+                                    </div>
+                                </header>
+
+                                <!-- Send SMS Content -->
+                                <div class="content-area">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h2>Send SMS</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="sendSmsForm">
+                                                <div class="form-row">
+                                                    <div class="form-group">
+                                                        <label>Send To</label>
+                                                        <select id="sendType" class="form-control">
+                                                            <option value="individual">Individual Contact</option>
+                                                            <option value="bulk">Bulk Send</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row" id="individualSection">
+                                                    <div class="form-group">
+                                                        <label>Phone Number</label>
+                                                        <input type="tel" id="phoneNumber" class="form-control"
+                                                            placeholder="+91 9876543210">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row" id="bulkSection" style="display: none;">
+                                                    <div class="form-group">
+                                                        <label>Select Contacts</label>
+                                                        <select id="bulkContacts" class="form-control" multiple>
+                                                            <option value="all">All Contacts</option>
+                                                        </select>
+                                                        <span class="form-help">Hold Ctrl/Cmd to select multiple</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group full-width">
+                                                        <label>Message</label>
+                                                        <textarea id="smsMessage" class="form-control" rows="5"
+                                                            placeholder="Type your message here..."
+                                                            maxlength="160"></textarea>
+                                                        <span class="char-count"><span id="charCount">0</span>/160
+                                                            characters</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-secondary">Clear</button>
+                                                    <button type="submit" class="btn-primary">Send SMS</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Load Scripts -->
+                            <script src="js/settings-loader.js"></script>
+                            <script src="js/dashboard.js"></script>
+                        </body>
+
+                        </html>
